@@ -1,7 +1,7 @@
 version: '3'
 
 services:
-  db:
+  postgresql:
     image: postgres:16
     container_name: postgre_padelplanet
     # restart: always
@@ -18,3 +18,16 @@ services:
       - ./db/data:/var/lib/postgresql/data
       - ./db/wal:/wal
     command: ["postgres", "-c", "max_connections=200"]
+  
+      
+  node:
+    build: .
+    container_name: node_padelplanet
+    # restart: always
+    ports:
+      - ${APP_PORT}:3000
+    depends_on:
+      - postgresql
+    volumes:
+      - .:/app
+      - /app/node_modules
