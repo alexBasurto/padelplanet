@@ -1,5 +1,7 @@
 import { DataTypes } from "sequelize";
 import sequelize from "../config/sequelize.js";
+import ordersModel from "./ordersModel.js";
+import gamesModel from "./gamesModel.js";
 
 const usersModel = sequelize.define("tbUsers", {
     idUser: {
@@ -43,7 +45,18 @@ const usersModel = sequelize.define("tbUsers", {
         tableName: 'tbUsers',
         timestamps: false, // Si no tienes campos createdAt y updatedAt en tu tabla
         underscored: false, // Utiliza el estilo de nomenclatura snake_case para las columnas
-})
+},
+)
+
+// Definir relación con el modelo de pedidos
+usersModel.hasMany(ordersModel, {
+    foreignKey: 'idUser',
+});
+
+// Definir relación con el modelo de partidos
+usersModel.hasMany(gamesModel, {
+    foreignKey: 'idUser',
+});
 
 //pendiente definir relaciones
 

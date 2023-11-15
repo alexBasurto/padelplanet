@@ -1,5 +1,6 @@
 import { DataTypes } from "sequelize";
 import sequelize from "../config/sequelize.js";
+import orderDetailModel from "./orderDetailModel.js";
 
 const productsModel = sequelize.define("tbProducts", {
     idProduct: {
@@ -32,6 +33,9 @@ const productsModel = sequelize.define("tbProducts", {
         underscored: false, // Utiliza el estilo de nomenclatura snake_case para las columnas
 })
 
-//pendiente definir relaciones
+// Definir relación con el modelo de pedidos
+productsModel.hasMany(orderDetailModel, {
+    foreignKey: 'idUser',
+});
 
 export default productsModel;

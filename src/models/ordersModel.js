@@ -1,6 +1,7 @@
 import { DataTypes } from "sequelize";
 import sequelize from "../config/sequelize.js";
 import usersModel from "./usersModel.js"; // Asegúrate de importar el modelo de usuarios
+import orderDetailModel from "./orderDetailModel.js";
 
 const ordersModel = sequelize.define("tbOrders", {
     idOrder: {
@@ -27,6 +28,11 @@ const ordersModel = sequelize.define("tbOrders", {
 ordersModel.belongsTo(usersModel, {
     foreignKey: 'idUser',
     as: 'user',
+});
+
+// Definir relación con el modelo de pedidos
+ordersModel.hasMany(orderDetailModel, {
+    foreignKey: 'idOrder',
 });
 
 export default ordersModel;

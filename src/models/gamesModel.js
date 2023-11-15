@@ -84,22 +84,22 @@ gamesModel.belongsTo(courtsModel, {
 });
 
 gamesModel.belongsTo(usersModel, {
-    foreignKey: 'idUser1Team1',
+    foreignKey: 'idUser',
     as: 'user1Team1',
 });
 
 gamesModel.belongsTo(usersModel, {
-    foreignKey: 'idUser2Team1',
+    foreignKey: 'idUser',
     as: 'user2Team1',
 });
 
 gamesModel.belongsTo(usersModel, {
-    foreignKey: 'idUser1Team2',
+    foreignKey: 'idUser',
     as: 'user1Team2',
 });
 
 gamesModel.belongsTo(usersModel, {
-    foreignKey: 'idUser2Team2',
+    foreignKey: 'idUser',
     as: 'user2Team2',
 });
 
