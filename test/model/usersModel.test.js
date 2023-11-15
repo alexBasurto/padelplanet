@@ -26,7 +26,7 @@ describe("Tests de modelo de usuario(s)",() => {
         expect(user.favSchedule).toEqual(favSchedule);
         expect(user.password).toEqual(password);
         expect(user.photo).toEqual(photo);
-        idUser = user._id;
+        idUser = user.idUser;
     });
 
     test("Conseguir todos los usuarios", async() => {
@@ -43,36 +43,59 @@ describe("Tests de modelo de usuario(s)",() => {
         expect(usuarios[0]).toHaveProperty("photo");
     });
 
-/* 
-
     test("Conseguir un usuario por ID", async() => {
-        const producto = await Product.findOne({_id:id});
-        expect(producto).not.toBeUndefined();
-        expect(producto).not.toBeNull();
-        expect(producto.nombre).toEqual(nombre);
-        expect(producto.imagen).toEqual(imagen);
-        expect(producto.precio).toEqual(precio);
+        const usuario = await User.findOne({
+            where: {
+                idUser: idUser
+            }
+        });
+        expect(usuario).not.toBeUndefined();
+        expect(usuario).not.toBeNull();
+        expect(usuario.userName).toEqual(userName);
+        expect(usuario.userEmail).toEqual(userEmail);
+        expect(usuario.level).toEqual(level);
+        expect(usuario.favHand).toEqual(favHand);
+        expect(usuario.courtPos).toEqual(courtPos);
+        expect(usuario.gameType).toEqual(gameType);
+        expect(usuario.favSchedule).toEqual(favSchedule);
+        expect(usuario.password).toEqual(password);
+        expect(usuario.photo).toEqual(photo);
     })
 
     test("Editar un usuario por ID", async() => {
-        const producto = await Product.findOne({_id:id});
-        producto.nombre="Anderoid";
-        producto.precio=9999;
-        await producto.save();
-        const productoNuevo =  await Product.findOne({_id:id});
-        expect(productoNuevo).not.toBeUndefined();
-        expect(productoNuevo).not.toBeNull();
-        expect(productoNuevo.nombre).toEqual("Anderoid");
-        expect(productoNuevo.imagen).toEqual(imagen);
-        expect(productoNuevo.precio).toEqual(9999);
+        const usuario = await User.findOne({
+            where: {
+                idUser: idUser
+            }
+        });
+        usuario.userName = "Jaime";;
+        usuario.userEmail = "jaime@mail.com";
+        usuario.level = 5;
+        await usuario.save();
+        const usuarioNuevo =  await User.findOne({
+            where: {
+                idUser: idUser
+            }
+        });
+        expect(usuarioNuevo).not.toBeUndefined();
+        expect(usuarioNuevo).not.toBeNull();
+        expect(usuarioNuevo.userName).toEqual("Jaime");
+        expect(usuarioNuevo.userEmail).toEqual("jaime@mail.com");
+        expect(usuarioNuevo.level).toEqual(5);
     })
 
     test("Borrar un usuario por ID", async() => {
-        await Product.deleteOne({_id:id});
-        const oldProduct = await Product.findOne({_id:id});
-        expect(oldProduct).toBeNull();
+        await User.destroy({
+            where: {
+                idUser: idUser
+            }
+        });
+        const oldUser = await User.findOne({
+            where: {
+                idUser: idUser
+            }
+        });
+        expect(oldUser).toBeNull();
 
-    }) */
-
-
+    })
 })
