@@ -1,4 +1,4 @@
-#DIARIO DE TRABAJO
+#REGISTRO DIARIO
 ###9-11 al 14-11
 - Varias ideas
 - Iniciar juego de cartas

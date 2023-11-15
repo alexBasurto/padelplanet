@@ -41,7 +41,8 @@ CREATE TABLE padelplanet."tbClubs" (
     "idClub" integer NOT NULL,
     "clubName" character varying(100) NOT NULL,
     address character varying(200) NOT NULL,
-    comments character varying(200)
+    comments character varying(200),
+    photo text
 );
 
 
@@ -203,11 +204,12 @@ CREATE TABLE padelplanet."tbUsers" (
     "userName" character varying(100) NOT NULL,
     "userEmail" character varying(100) NOT NULL,
     level integer,
-    "favHand" character varying(10),
-    "courtPos" character varying(10),
-    "gameType" character varying(10),
-    "favSchedule" character varying(10),
-    password character varying(100) NOT NULL
+    "favHand" character varying(25),
+    "courtPos" character varying(25),
+    "gameType" character varying(25),
+    "favSchedule" character varying(25),
+    password character varying(100) NOT NULL,
+    photo text
 );
 
 
