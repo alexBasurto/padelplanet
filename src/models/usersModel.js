@@ -37,7 +37,6 @@ const usersModel = sequelize.define("tbUsers", {
     },
     photo: {
         type: DataTypes.TEXT,
-        allowNull: true,
     }
 },
     {
