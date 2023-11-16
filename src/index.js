@@ -6,7 +6,6 @@ import session from "express-session";
 // Importa el módulo de enrutador definido en "router.js".
 import router from "./routes/router.js";
 
-
 // Carga las variables de entorno desde un archivo ".env".
 dotenv.config();
 
@@ -34,7 +33,7 @@ app.use(express.json());
 app.use(express.urlencoded({extended:true}));
 
 app.get("/",(req,res)=>{
-    res.send("Servidor web en marcha en puerto 3000.");
+    res.render("home");
 });
 
 app.use("/",router);

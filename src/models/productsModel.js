@@ -1,6 +1,5 @@
 import { DataTypes } from "sequelize";
 import sequelize from "../config/sequelize.js";
-import orderDetailModel from "./orderDetailModel.js";
 
 const productsModel = sequelize.define("tbProducts", {
     idProduct: {
@@ -32,10 +31,5 @@ const productsModel = sequelize.define("tbProducts", {
         timestamps: false, // Si no tienes campos createdAt y updatedAt en tu tabla
         underscored: false, // Utiliza el estilo de nomenclatura snake_case para las columnas
 })
-
-// Definir relación con el modelo de pedidos
-productsModel.hasMany(orderDetailModel, {
-    foreignKey: 'idUser',
-});
 
 export default productsModel;

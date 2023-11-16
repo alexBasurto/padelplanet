@@ -3,11 +3,11 @@ import { Op } from "sequelize";
 import clubsModel from "../models/clubsModel.js";
 import courtsModel from "../models/courtsModel.js";
 
-const getAll = async (q = null) => {
+const getAll = async (clubsSearch = null) => {
     const options = {};
-    if (q) {
+    if (clubsSearch) {
         options.where = {
-            clubName: { [Op.like]: `%${q}%` },
+            clubName: { [Op.like]: `%${clubsSearch}%` },
         };
     }
     try {

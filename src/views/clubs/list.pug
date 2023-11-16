@@ -1,0 +1,17 @@
+extends ../main
+
+block content
+  if error
+    p(class="error", style="color:red;")= error
+  div(class="head-container")  
+    a(href='/clubs/new', class="new-button") Nuevo Club
+
+  section(class="search-container")
+    if clubs
+      each club in clubs
+        section(class="club-card")
+          h3=club.clubName
+          p=club.address 
+          p=club.comments 
+          img(src=club.photo alt="Foto del club")
+

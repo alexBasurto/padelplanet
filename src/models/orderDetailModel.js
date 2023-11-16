@@ -36,15 +36,22 @@ const orderDetailModel = sequelize.define("tbOrderDetail", {
     underscored: false,
 });
 
-// Definir relaciones con modelos de órdenes y productos
 orderDetailModel.belongsTo(ordersModel, {
-    foreignKey: 'idOrder',
-    as: 'order',
+    foreignKey: "idOrder",
+    as: "order",
+});
+
+ordersModel.hasMany(orderDetailModel, {
+    foreignKey: "idOrder",
 });
 
 orderDetailModel.belongsTo(productsModel, {
-    foreignKey: 'idProduct',
-    as: 'product',
+    foreignKey: "idProduct",
+    as: "product",
+});
+
+productsModel.hasMany(orderDetailModel, {
+    foreignKey: "idUser",
 });
 
 export default orderDetailModel;

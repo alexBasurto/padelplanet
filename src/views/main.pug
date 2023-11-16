@@ -1,0 +1,31 @@
+doctype html
+html 
+    head 
+        title PADEL PLANET
+        meta(charset="UTF-8")
+        meta(name="viewport" content="width=device-width, initial-scale=1.0")
+        link(rel="stylesheet" href="/css/style.css")
+        link(rel="shortcut icon" href="/images/iconPadel.png" type="image/x-icon")
+
+    body
+        header
+            section.logo
+                img(src="/images/iconPadel.png")
+                h1.nombre-logo PADEL PLANET
+
+            nav 
+                a(href="/") Home 
+                a(href="/clubs") Clubes
+                a(href="/games") Partidos
+                a(href="/shop") Tienda
+                a(href="/users") Usuarios
+                a(href="/login") Login
+                a(href="/logout") Logout
+
+        main
+            block content
+
+            script(type="module", src="/js/script.js")  
+            block script
+        
+        include footer.pug

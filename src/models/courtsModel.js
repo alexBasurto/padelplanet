@@ -1,7 +1,6 @@
 import { DataTypes } from "sequelize";
 import sequelize from "../config/sequelize.js";
 import clubsModel from "./clubsModel.js"; // Asegúrate de importar el modelo del club
-import gamesModel from "./gamesModel.js";
 
 const courtsModel = sequelize.define("tbCourts", {
     idCourt: {
@@ -41,13 +40,13 @@ const courtsModel = sequelize.define("tbCourts", {
         underscored: false, // Utiliza el estilo de nomenclatura snake_case para las columnas
 })
 
-courtsModel.belongsTo(clubsModel, {
-    foreignKey: 'idClub',
-    as: 'club',
+clubsModel.hasMany(courtsModel, {
+    foreignKey: "idClub",
 });
 
-courtsModel.hasMany(gamesModel, {
-    foreignKey: 'idCourt',
+courtsModel.belongsTo(clubsModel, {
+    foreignKey: "idClub",
+    as: "club",
 });
 
 export default courtsModel;

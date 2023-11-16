@@ -77,30 +77,39 @@ const gamesModel = sequelize.define("tbGames", {
     underscored: false,
 });
 
-// Definir relaciones con modelos de canchas y usuarios
+
+
+courtsModel.hasMany(gamesModel, {
+    foreignKey: "idCourt",
+});
+
 gamesModel.belongsTo(courtsModel, {
-    foreignKey: 'idCourt',
-    as: 'court',
+    foreignKey: "idCourt",
+    as: "court",
 });
 
 gamesModel.belongsTo(usersModel, {
-    foreignKey: 'idUser',
-    as: 'user1Team1',
+    foreignKey: "idUser",
+    as: "user1Team1",
 });
 
 gamesModel.belongsTo(usersModel, {
-    foreignKey: 'idUser',
-    as: 'user2Team1',
+    foreignKey: "idUser",
+    as: "user2Team1",
 });
 
 gamesModel.belongsTo(usersModel, {
-    foreignKey: 'idUser',
-    as: 'user1Team2',
+    foreignKey: "idUser",
+    as: "user1Team2",
 });
 
 gamesModel.belongsTo(usersModel, {
-    foreignKey: 'idUser',
-    as: 'user2Team2',
+    foreignKey: "idUser",
+    as: "user2Team2",
+});
+
+usersModel.hasMany(gamesModel, {
+    foreignKey: "idUser",
 });
 
 export default gamesModel;

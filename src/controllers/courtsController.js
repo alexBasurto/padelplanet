@@ -1,7 +1,6 @@
 import { Op } from "sequelize";
 
 import courtsModel from "../models/courtsModel.js";
-import clubsModel from "../models/clubsModel.js";
 import gamesModel from "../models/gamesModel.js";
 
 const getAll = async (idClub = null) => {

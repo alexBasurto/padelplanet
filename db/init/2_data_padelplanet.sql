@@ -24,14 +24,14 @@ SET row_security = off;
 -- Data for Name: tbClubs; Type: TABLE DATA; Schema: padelplanet; Owner: administrador
 --
 
-INSERT INTO padelplanet."tbClubs" ("idClub", "clubName", address, comments, photo) OVERRIDING SYSTEM VALUE VALUES (1, 'Club Derio', 'Derio, Dirección del club en Derio', NULL, 'clubnophoto.png');
-INSERT INTO padelplanet."tbClubs" ("idClub", "clubName", address, comments, photo) OVERRIDING SYSTEM VALUE VALUES (2, 'Club Barakaldo', 'Barakaldo, Dirección del club en Barakaldo', NULL, 'clubnophoto.png');
-INSERT INTO padelplanet."tbClubs" ("idClub", "clubName", address, comments, photo) OVERRIDING SYSTEM VALUE VALUES (3, 'Club Zamudio', 'Zamudio, Dirección del club en Zamudio', NULL, 'clubnophoto.png');
-INSERT INTO padelplanet."tbClubs" ("idClub", "clubName", address, comments, photo) OVERRIDING SYSTEM VALUE VALUES (4, 'Club Mungia', 'Mungia, Dirección del club en Mungia', NULL, 'clubnophoto.png');
-INSERT INTO padelplanet."tbClubs" ("idClub", "clubName", address, comments, photo) OVERRIDING SYSTEM VALUE VALUES (5, 'Club Basauri', 'Basauri, Dirección del club en Basauri', NULL, 'clubnophoto.png');
-INSERT INTO padelplanet."tbClubs" ("idClub", "clubName", address, comments, photo) OVERRIDING SYSTEM VALUE VALUES (6, 'Club Bilbao', 'Bilbao, Dirección del club en Bilbao', NULL, 'clubnophoto.png');
-INSERT INTO padelplanet."tbClubs" ("idClub", "clubName", address, comments, photo) OVERRIDING SYSTEM VALUE VALUES (7, 'Club Castro-Urdiales', 'Castro-Urdiales, Dirección del club en Castro-Urdiales', NULL, 'clubnophoto.png');
-INSERT INTO padelplanet."tbClubs" ("idClub", "clubName", address, comments, photo) OVERRIDING SYSTEM VALUE VALUES (8, 'Club Santurtzi', 'Santurtzi, Dirección del club en Santurtzi', NULL, 'clubnophoto.png');
+INSERT INTO padelplanet."tbClubs" ("idClub", "clubName", address, comments, photo) OVERRIDING SYSTEM VALUE VALUES (1, 'Club Derio', 'Derio, Dirección del club en Derio', NULL, '/images/clubs/club1.jpg');
+INSERT INTO padelplanet."tbClubs" ("idClub", "clubName", address, comments, photo) OVERRIDING SYSTEM VALUE VALUES (2, 'Club Barakaldo', 'Barakaldo, Dirección del club en Barakaldo', NULL, '/images/clubs/club2.jpg');
+INSERT INTO padelplanet."tbClubs" ("idClub", "clubName", address, comments, photo) OVERRIDING SYSTEM VALUE VALUES (3, 'Club Zamudio', 'Zamudio, Dirección del club en Zamudio', NULL, '/images/clubs/club3.jpg');
+INSERT INTO padelplanet."tbClubs" ("idClub", "clubName", address, comments, photo) OVERRIDING SYSTEM VALUE VALUES (4, 'Club Mungia', 'Mungia, Dirección del club en Mungia', NULL, '/images/clubs/club4.jpg');
+INSERT INTO padelplanet."tbClubs" ("idClub", "clubName", address, comments, photo) OVERRIDING SYSTEM VALUE VALUES (5, 'Club Basauri', 'Basauri, Dirección del club en Basauri', NULL, '/images/clubs/club5.jpg');
+INSERT INTO padelplanet."tbClubs" ("idClub", "clubName", address, comments, photo) OVERRIDING SYSTEM VALUE VALUES (6, 'Club Bilbao', 'Bilbao, Dirección del club en Bilbao', NULL, '/images/clubs/club6.jpg');
+INSERT INTO padelplanet."tbClubs" ("idClub", "clubName", address, comments, photo) OVERRIDING SYSTEM VALUE VALUES (7, 'Club Castro-Urdiales', 'Castro-Urdiales, Dirección del club en Castro-Urdiales', NULL, '/images/clubs/club7.jpg');
+INSERT INTO padelplanet."tbClubs" ("idClub", "clubName", address, comments, photo) OVERRIDING SYSTEM VALUE VALUES (8, 'Club Santurtzi', 'Santurtzi, Dirección del club en Santurtzi', NULL, '/images/clubs/club8.jpg');
 
 
 --
