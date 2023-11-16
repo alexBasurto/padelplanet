@@ -1,36 +1,21 @@
 extends ../main
 
 block content
-    h1.title Nuevo Perro
+    h1.title Nuevo Club
     if error
         h2= error
-    form.formulario(action="/dogs", method="post", enctype="multipart/form-data") 
+    form.formulario(action="/clubs", method="post", enctype="multipart/form-data") 
         .form-group
-            label(for="name") Nombre*
-            input(type="text", name="name", id="name", class="input-field")
+            label(for="clubName") Nombre del club*
+            input(type="text", name="clubName", id="clubName", class="input-field")
         .form-group
-            label(for="color") Color*
-            input(type="text", name="color", id="color", class="input-field")
+            label(for="address") Dirección*
+            input(type="text", name="address", id="address", class="input-field")
         .form-group
-            label(for="size") Tamaño*
-            input(type="text", name="size", id="size", class="input-field")
+            label(for="comments") Comentarios*
+            input(type="text", name="comments", id="comments", class="input-field")
         .form-group
             label(for="fotoSubir") Foto
-            input(type="file", name="fotoSubir", id="fotoSubir", class="input-field")
-            
+            input(type="file", name="photo", id="photo", class="input-field")
         .form-group
-            label(for="behavior") Comportamiento*
-            input(type="text", name="behavior", id="behavior", class="input-field")
-        .form-group
-            label(for="yearOfBirth") Año nacimiento*
-            input(type="text", name="yearOfBirth", id="yearOfBirth", class="input-field")
-        .form-group
-            label(for="comments") Comentarios
-            textarea(type="text", name="comments", id="comments", class="input-field") 
-        .form-group
-            label(for="idBreed") Raza*:
-            select(name="idBreed", id="idBreed", class="input-field")
-                each breed in breeds
-                    option(value=breed.idBreed)= breed.name
-        .form-group
-            input(type="submit", value="Crear", class="btn-primary")
+            input(type="submit", value="Crear Club", class="btn-primary")
