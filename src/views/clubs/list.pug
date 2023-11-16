@@ -4,14 +4,18 @@ block content
   if error
     p(class="error", style="color:red;")= error
   div(class="head-container")  
-    a(href='/clubs/new', class="new-button") Nuevo Club
+    a(href='/clubs/new', class="new-button") + añadir club
 
-  section(class="search-container")
+  section(class="cards-container")
     if clubs
       each club in clubs
         section(class="club-card")
-          h3=club.clubName
-          p=club.address 
-          p=club.comments 
-          img(src=club.photo alt="Foto del club")
+          section.foto-club-container
+            img.foto-club(src=club.photo alt="Foto del club")
+            h3.club-name=club.clubName
+          section.texto-club-card
+            p=club.address 
+            p=club.comments
+            a.ver-disponibilidad(href="")="JUGAR"
+          
 
