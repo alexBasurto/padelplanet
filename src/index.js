@@ -24,8 +24,8 @@ app.use(session({
 
 // Configura el middleware para servir archivos estáticos desde el directorio "public".
 app.use(express.static("public"));
-//Vistas
 
+//Vistas
 app.set('views', './src/views');
 app.set('view engine', 'pug');
 

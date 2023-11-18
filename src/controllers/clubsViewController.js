@@ -38,7 +38,7 @@ const create = async (req, res) => {
         clubName,
         address,
         comments,
-        photo
+        photoPath
     );
     if (error) {
         const uriError = encodeURIComponent(error);
@@ -80,7 +80,7 @@ const update = async (req, res) => {
 
 const remove = async (req, res) => {
     const idClub = req.params.id;
-    const [error, club] = await dogsController.getById(idClub);
+    const [error, club] = await clubsController.getById(idClub);
     if (error) {
         return res.redirect("/clubs?error=" + encodeURIComponent(error));
     }

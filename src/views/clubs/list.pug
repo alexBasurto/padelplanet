@@ -1,6 +1,7 @@
 extends ../main
 
 block content
+  h1.title Clubes
   if error
     p(class="error", style="color:red;")= error
   div(class="head-container")  
@@ -16,6 +17,10 @@ block content
           section.texto-club-card
             p=club.address 
             p=club.comments
-            a.ver-disponibilidad(href="")="JUGAR"
+            if session.rol == 'admin'
+              a.ver-disponibilidad(href="")="JUGAR"
+            if session.rol != 'admin'
+              a.editar(href='/clubs/'+club.idClub+'/edit') EDITAR
+              a.borrar(href='/clubs/'+club.idClub+'/delete') BORRAR
           
 

@@ -5,17 +5,12 @@ block content
     if error
         h2= error
     form.formulario(action="/clubs", method="post", enctype="multipart/form-data") 
-        .form-group
-            label(for="clubName") Nombre del club*
-            input(type="text", name="clubName", id="clubName", class="input-field")
-        .form-group
-            label(for="address") Dirección*
-            input(type="text", name="address", id="address", class="input-field")
-        .form-group
-            label(for="comments") Comentarios*
-            input(type="text", name="comments", id="comments", class="input-field")
-        .form-group
-            label(for="fotoSubir") Foto
-            input(type="file", name="photo", id="photo", class="input-field")
-        .form-group
-            input(type="submit", value="Crear Club", class="btn-primary")
+        label(for="clubName") Nombre del club*
+        input(type="text", name="clubName", id="clubName", class="input-field")
+        label(for="address") Dirección*
+        input(type="text", name="address", id="address", class="input-field")
+        label(for="comments") Comentarios*
+        input(type="text", name="comments", id="comments", class="input-field")
+        label(for="photo") Foto
+        input.foto(type="file", name="photo", id="photo", class="input-field")
+        input.guardar(type="submit", value="Crear Club", class="btn-primary")

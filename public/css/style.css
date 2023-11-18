@@ -41,6 +41,8 @@ img.logo-bola {
     animation: rotateAnimation 5s linear infinite;
 }
 
+
+
 /* Define la animación llamada rotateAnimation */
 @keyframes rotateAnimation {
     from {
@@ -51,6 +53,14 @@ img.logo-bola {
     }
 }
 
+/* Título de cada página */
+
+h1.title {
+    font-family: "Orbitron", sans-serif;
+    font-size: 22px;
+    width: 100%;
+    text-align: center;
+}
 
 nav {
     display: flex;
@@ -133,12 +143,18 @@ a:hover {
 
 .texto-club-card {
     display: flex;
-    flex-direction: column;
+    flex-direction: row;
+    flex-wrap: wrap;
     justify-content: space-between;
     font-size: 12px;
     text-align: center;
     padding: 15px;
     height: 100px;
+}
+
+.texto-club-card>p {
+    display: block;
+    width: 100%;
 }
 
 .ver-disponibilidad {
@@ -151,6 +167,82 @@ a:hover {
     color: black;
     text-decoration: none;
 }
+
+.editar , .borrar {
+    width: 50%
+}
+
+.editar {
+    border: 0;
+    font-size: 18px;
+    background-color: rgb(184, 184, 184);
+    border-radius: 25px;
+    padding: 8px;
+    width: 120px;
+    color: black;
+    text-decoration: none;
+}
+.borrar {
+    border: 0;
+    font-size: 18px;
+    background-color: rgb(255, 50, 50);
+    color: white;
+    border-radius: 25px;
+    padding: 8px;
+    width: 120px;
+    color: black;
+    text-decoration: none;
+}
+
+/* Página nuevo club */
+
+.formulario {
+    background-color: white;
+    border-radius: 25px;
+    width: 90%;
+    margin: auto 5%;
+    padding: 15px;
+}
+
+.formulario>label , .formulario>input {
+    display: block;
+    width: 90%;
+    height: 20px;
+    margin: 5px 5%;
+}
+
+.formulario>input {
+    border-radius: 25px;
+    border: none;
+    background-color: rgb(176, 203, 255);
+}
+
+/* Estilos boton subir foto */
+
+input.foto {
+    display: inline-block;
+    padding: 6px 12px;
+    cursor: pointer;
+    border-radius: 25px;
+    border: none;
+    background-color: rgb(176, 203, 255);
+    height: 35px;
+  }
+  
+input.guardar {
+    font-size: 18px;
+    padding: 8px;
+    width: 50%;
+    height: auto;
+    margin: 20px 25%
+}
+  
+  /* Estilos opcionales para resaltar cuando el usuario pasa el ratón sobre el área de carga */
+  input.foto:hover {
+    background-color: #e0e0e0;
+    border-color: #adadad;
+  }
+  
 
 /* Footer */
 footer {

@@ -17,7 +17,7 @@ router.get("/:id", /* isAuthenticated, */ (req, res) => {
     clubsViewController.getById(req, res);
 });
 
-router.post("/", /* isAuthenticated, */ upload.single('fotoSubir'), (req, res) => {
+router.post("/", /* isAuthenticated, */ upload.single('photo'), (req, res) => {
     clubsViewController.create(req, res);
 });
 
