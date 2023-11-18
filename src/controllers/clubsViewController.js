@@ -69,8 +69,8 @@ const update = async (req, res) => {
     const existingClub = await clubsController.getById(idClub);
 
     // Verifica si se proporciona una nueva foto, si no, mantén la foto existente
-    const updatedPhoto = photo ? `/images/clubs/${photo}` : existingClub.photo;
-
+    const updatedPhoto = req.file ? "/images/clubs/" + req.file.filename : existingClub.photo;
+     
     const [error, club] = await clubsController.update(
         idClub,
         clubName,
