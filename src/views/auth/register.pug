@@ -1,0 +1,14 @@
+extends ../main
+
+block content
+    h1.title Registro
+    if error
+        h2= error
+    form.formulario(action="/register", method="post",  enctype="application/x-www-form-urlencoded")
+        label(for="email") E-mail*
+        input(type="text", name="email", id="email", class="input-field")
+        label(for="password") Contraseña*
+        input(type="password", name="password", id="password", class="input-field")
+        label(for="password2") Repita contraseña*
+        input(type="password", name="password2", id="password2", class="input-field")
+        input(type="submit", value="Registrarse", class="btn-primary")

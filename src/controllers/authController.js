@@ -38,9 +38,16 @@ const logout = (req,res)=>{
     res.redirect("/login");
 }
 
+// Controlador para mostrar el formulario de registro.
+const registerForm = (req,res)=>{
+    const errorMessage = req.query.error;
+    res.render("auth/register");
+}
+
 // Exporta los controladores relacionados con la autenticación.
 export default {
     login,
     loginForm,
-    logout
+    logout,
+    registerForm
 }
