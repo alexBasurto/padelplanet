@@ -25,12 +25,14 @@ app.use(session({
 // Configura el middleware para servir archivos estáticos desde el directorio "public".
 app.use(express.static("public"));
 
+
+app.use(express.json());
+app.use(express.urlencoded({extended:true}));
+
 //Vistas
 app.set('views', './src/views');
 app.set('view engine', 'pug');
 
-app.use(express.json());
-app.use(express.urlencoded({extended:true}));
 
 app.get("/",(req,res)=>{
     res.render("home");
