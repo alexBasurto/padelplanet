@@ -7,7 +7,7 @@ block content
     form.formulario(action=`/clubs/${club.idClub}`, method="post", enctype="multipart/form-data")
         label(for="clubName") Nombre*
         input(type="text", name="clubName", id="clubName" value=club.clubName)
-        label(for="address") DIrección*
+        label(for="address") Dirección*
         input(type="text", name="address", id="address", value=club.address)         
         label(for="comments") Comentarios
         input(type="text", name="comments", id="comments", value=club.comments)

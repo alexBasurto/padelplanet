@@ -1,0 +1,12 @@
+extends ../main
+
+block content
+    h1.title Inicie sesión
+    if error
+        h2= error
+    form.formulario(action="/login", method="post" enctype="multipart/form-data")
+        label(for="email") Usuario*
+        input(type="text", name="email", id="email", class="input-field")
+        label(for="password") Contraseña*
+        input(type="password", name="password", id="password", class="input-field")
+        input(type="submit", value="Enviar", class="btn-primary")
