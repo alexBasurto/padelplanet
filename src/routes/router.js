@@ -9,5 +9,8 @@ const router = Router();
 // Ruta clubs
 router.use("/clubs",clubsRouter);
 
+//Creamos ruta para login
+router.use("/",authRouter);
+
 // Exporta el objeto de rutas para su uso en la aplicación.
 export default router;

@@ -37,7 +37,11 @@ const usersModel = sequelize.define("tbUsers", {
     },
     photo: {
         type: DataTypes.TEXT,
-    }
+    },
+    admin: {
+        type: DataTypes.INTEGER,
+    },
+    
 },
     {
         tableName: 'tbUsers',

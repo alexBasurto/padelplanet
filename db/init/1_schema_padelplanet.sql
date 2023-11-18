@@ -209,7 +209,8 @@ CREATE TABLE padelplanet."tbUsers" (
     "gameType" character varying(25),
     "favSchedule" character varying(25),
     password character varying(100) NOT NULL,
-    photo text
+    photo text,
+    admin integer
 );
 
 
