@@ -64,12 +64,19 @@ const updateForm = async (req, res) => {
 const update = async (req, res) => {
     const idClub = req.params.id;
     const { clubName, address, comments, photo } = req.body;
+
+    // Obtén el club existente de la base de datos
+    const existingClub = await clubsController.getById(idClub);
+
+    // Verifica si se proporciona una nueva foto, si no, mantén la foto existente
+    const updatedPhoto = photo ? photo : existingClub.photo;
+
     const [error, club] = await clubsController.update(
         idClub,
         clubName,
         address,
         comments,
-        photo
+        updatedPhoto
     );
     if (error) {
         const uriError = encodeURIComponent(error);
