@@ -204,6 +204,11 @@ a:hover {
     padding: 15px;
 }
 
+.formulario>img#photo {
+    width: 250px;
+    margin-left: 5%;
+}
+
 .formulario>label , .formulario>input {
     display: block;
     width: 90%;
@@ -215,6 +220,19 @@ a:hover {
     border-radius: 25px;
     border: none;
     background-color: rgb(176, 203, 255);
+}
+
+a.cancelar {
+    border-radius: 25px;
+    border: none;
+    font-size: 14px;
+    display: block;
+    width: 90%;
+    height: auto;
+    text-align: center;
+    background-color: rgb(255, 50, 50);
+    color: white;
+    text-decoration: none;
 }
 
 /* Estilos boton subir foto */
