@@ -44,10 +44,41 @@ const registerForm = (req,res)=>{
     res.render("auth/register");
 }
 
+// Controlador para el registro de usuarios.
+const register = async (req,res)=>{
+    const {name,email,favHand,courtPosition,gameType,favSchedule,password,confirmPassword} = req.body;
+    try {
+        if(password === confirmPassword){
+            const hash = await bcrypt.hash(password,10);
+            const newUser = await usersModel.create({
+                userName:name,
+                userEmail:email,
+                favHand:favHand,
+                courtPos:courtPosition,
+                gameType:gameType,
+                favSchedule:favSchedule,
+                password:hash,
+                admin:0
+            });
+            req.session.user = newUser.idUser;
+            req.session.rol = newUser.admin;
+            res.redirect("/");
+        } else {
+            throw new Error("Las contraseñas no coinciden.")
+        }
+    }
+    catch(e){
+        const errorUri = encodeURIComponent(e.message);
+        return res.redirect("/register?error="+errorUri);
+    }
+    
+}
+
 // Exporta los controladores relacionados con la autenticación.
 export default {
     login,
     loginForm,
     logout,
-    registerForm
+    registerForm,
+    register
 }

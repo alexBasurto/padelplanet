@@ -5,10 +5,28 @@ block content
     if error
         h2= error
     form.formulario(action="/register", method="post",  enctype="application/x-www-form-urlencoded")
+        label(for="name") Nombre y apellido*
+        input(type="text", name="name", id="name", class="input-field")
         label(for="email") E-mail*
         input(type="text", name="email", id="email", class="input-field")
+        label(for="favHand") Mano con la que juega
+        select(name="favHand", id="favHand", class="input-field")
+            option(value="Izquierda") Izquierda
+            option(value="Derecha") Derecha
+        label(for="courtPosition") Posición en pista preferida 
+        select(name="courtPosition", id="courtPosition", class="input-field")
+            option(value="Delantero") Delantero
+            option(value="Revés") Revés
+        label(for="gameType") Tipo de juego preferido
+        select(name="gameType", id="gameType", class="input-field")
+            option(value="Potencia") Competitivo
+            option(value="Control") Amistoso
+        label(for="favSchedule") Horario preferido
+        select(name="favSchedule", id="favSchedule", class="input-field")
+            option(value="Mañana") Mañana
+            option(value="Tarde") Tarde
         label(for="password") Contraseña*
         input(type="password", name="password", id="password", class="input-field")
-        label(for="password2") Repita contraseña*
-        input(type="password", name="password2", id="password2", class="input-field")
+        label(for="confirmPassword") Confirme contraseña*
+        input(type="password", name="confirmPassword", id="confirmPassword", class="input-field")
         input(type="submit", value="Registrarse", class="btn-primary")
