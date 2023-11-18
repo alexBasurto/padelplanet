@@ -24,6 +24,7 @@ router.post("/", /* isAuthenticated, */ upload.single('photo'), (req, res) => {
 router.get("/:id/edit", /* isAuthenticated, isAdmin, */ clubsViewController.updateForm);
 
 router.post("/:id", /* isAuthenticated, isAdmin, */upload.single('photo'), (req, res) => {
+    console.log("AQUIIIII", req.file);
     clubsViewController.update(req, res);
 });
 

@@ -4,7 +4,7 @@ block content
     h1.title Editar Club
     if error 
         h2= error
-    form.formulario(action=`/clubs/${club.idClub}`, method="post", enctype='application/x-www-form-urlencoded')
+    form.formulario(action=`/clubs/${club.idClub}`, method="post", enctype="multipart/form-data")
         label(for="clubName") Nombre*
         input(type="text", name="clubName", id="clubName" value=club.clubName)
         label(for="address") DIrección*
