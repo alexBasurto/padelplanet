@@ -41,8 +41,6 @@ img.logo-bola {
     animation: rotateAnimation 5s linear infinite;
 }
 
-
-
 /* Define la animación llamada rotateAnimation */
 @keyframes rotateAnimation {
     from {
@@ -81,6 +79,14 @@ nav a {
 
 a:hover {
     background-color: #ffd900;
+}
+
+/* Home */
+
+img.foto-de-entrada {
+    width: 90%;
+    border-radius: 25px;
+    margin: auto 5%;
 }
 
 /* Bónto nuevo */
@@ -152,7 +158,7 @@ a:hover {
     height: 100px;
 }
 
-.texto-club-card>p {
+.texto-club-card > p {
     display: block;
     width: 100%;
 }
@@ -168,8 +174,9 @@ a:hover {
     text-decoration: none;
 }
 
-.editar , .borrar {
-    width: 50%
+.editar,
+.borrar {
+    width: 50%;
 }
 
 .editar {
@@ -204,25 +211,26 @@ a:hover {
     padding: 15px;
 }
 
-.formulario>img#photo {
+.formulario > img#photo {
     width: 250px;
     margin-left: 5%;
 }
 
-.formulario>label , .formulario>input {
+.formulario > label,
+.formulario > input {
     display: block;
     width: 90%;
     height: 20px;
     margin: 5px 5%;
 }
 
-.formulario>input {
+.formulario > input {
     border-radius: 25px;
     border: none;
     background-color: rgb(176, 203, 255);
 }
 
-.formulario>select {
+.formulario > select {
     border-radius: 25px;
     border: none;
     background-color: rgb(176, 203, 255);
@@ -254,22 +262,21 @@ input.foto {
     border: none;
     background-color: rgb(176, 203, 255);
     height: 35px;
-  }
-  
+}
+
 input.guardar {
     font-size: 18px;
     padding: 8px;
     width: 50%;
     height: auto;
-    margin: 20px 25%
+    margin: 20px 25%;
 }
-  
-  /* Estilos opcionales para resaltar cuando el usuario pasa el ratón sobre el área de carga */
-  input.foto:hover {
+
+/* Estilos opcionales para resaltar cuando el usuario pasa el ratón sobre el área de carga */
+input.foto:hover {
     background-color: #e0e0e0;
     border-color: #adadad;
-  }
-  
+}
 
 /* Footer */
 footer {
@@ -289,5 +296,12 @@ footer {
         width: 20%;
         margin-left: 2.5%;
         margin-right: 2.5%;
+    }
+
+    /* Home */
+    img.foto-de-entrada {
+        width: 50%;
+        border-radius: 25px;
+        margin: auto 25%;
     }
 }
