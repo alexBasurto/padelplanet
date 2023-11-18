@@ -17,9 +17,9 @@ block content
           section.texto-club-card
             p=club.address 
             p=club.comments
-            if session.rol == 'admin'
+            if session.rol == 0
               a.ver-disponibilidad(href="")="JUGAR"
-            if session.rol != 'admin'
+            if session.rol == 1
               a.editar(href='/clubs/'+club.idClub+'/edit') EDITAR
               a.borrar(href='/clubs/'+club.idClub+'/delete') BORRAR
           

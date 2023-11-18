@@ -16,7 +16,7 @@ const isAdmin = async (req,res,next) =>{
         try {
             const user = await usersModel.findByPk(req.session.user);
 
-            if (user && user.rol === "admin") {
+            if (user && user.rol === 1) {
                 // El usuario tiene permisos de administrador, permite el acceso.
                 next();
             } else {

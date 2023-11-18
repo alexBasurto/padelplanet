@@ -9,7 +9,6 @@ router.get("/login",(req,res)=>{
 })
 
 router.post("/login",(req,res)=>{
-    console.log("REQ BODY", req.body, req.body.email, req.body.password);
     authController.login(req,res);
 })
 
