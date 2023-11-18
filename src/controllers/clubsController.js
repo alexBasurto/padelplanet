@@ -76,7 +76,7 @@ const remove = async (idClub) => {
             return [error, null];
         }
         const checkCourts = await courtsModel.count({
-            where: { idclub: club.idclub },
+            where: { idClub: club.idClub },
         });
         if (checkCourts > 0) {
             const error = `No se puede borrar. Existe(n) ${checkCourts} pistas(s) de este club. Borre las pistas primero.`;

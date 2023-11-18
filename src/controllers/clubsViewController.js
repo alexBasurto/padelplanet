@@ -88,6 +88,7 @@ const update = async (req, res) => {
 const remove = async (req, res) => {
     const idClub = req.params.id;
     const [error, club] = await clubsController.getById(idClub);
+    
     if (error) {
         return res.redirect("/clubs?error=" + encodeURIComponent(error));
     }
@@ -96,10 +97,9 @@ const remove = async (req, res) => {
         const uriError = encodeURIComponent(deleteError);
         return res.redirect(`/clubs?error=${uriError}`);
     } else {
-    const photoPath = "public" + club.photo;
     // Elimina el archivo de la foto si existe
-    if (fs.existsSync(photoPath)) {
-        fs.unlinkSync(photoPath, (err) => {
+    if (fs.existsSync(club.photo)) {
+        fs.unlinkSync(club.photo, (err) => {
             if (err) {
                 console.error(err);
             } else {
