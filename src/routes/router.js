@@ -2,6 +2,7 @@
 import { Router } from "express";
 
 import clubsRouter from "./clubsRouter.js"
+import authRouter from "./authRouter.js";
 
 // Crea una instancia de Router para definir rutas.
 const router = Router();
