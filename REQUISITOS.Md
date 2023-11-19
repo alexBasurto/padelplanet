@@ -6,7 +6,7 @@ Requisitos:
     - funciones de usuario (registro, login, logout, ...) OK
     - al menos un middleware OK
     - al menos dos endpoints (vistas o API REST) que requieran autenticación (login) OK
-    - al menos dos endpoints para la API REST con diferentes métodos HTTP (get,post,put,patch,delete)
+    - al menos dos endpoints para la API REST con diferentes métodos HTTP (get,post,put,patch,delete) OK
     - al menos un test unitario OK
 - Recomendados:
     - usar un scraper para obtener datos de otra web

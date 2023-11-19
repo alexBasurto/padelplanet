@@ -299,8 +299,8 @@ table.courts-table th {
 td.reservar a {
     text-decoration: none;
     padding: 5px 10px;
-    background-color: #ffd900;
-    border-radius: 5px;
+    background-color: rgb(176, 203, 255);
+    border-radius: 25px;
     color: black;
 }
 
