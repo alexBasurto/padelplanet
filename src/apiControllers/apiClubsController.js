@@ -2,13 +2,25 @@ import { Op } from "sequelize";
 
 import clubsModel from "../models/clubsModel.js";
 import courtsModel from "../models/courtsModel.js";
+import gamesModel from "../models/gamesModel.js";
 
 
 // funciion getAll que devuelve en JSON todos los clubes, desglosados con todas sus pistas (courts)
 const getAll = async (clubsSearch) => {
+// options haciendo include de courtsModel, y desde courtsMOdel haciendo include de gamesModel
     const options = {
-        include: courtsModel,
-        order: [["clubName", "ASC"]],
+        include: [
+            {
+                model: courtsModel,
+                include: [
+                    {
+                        model: gamesModel,
+                        //idCourt como campo en común
+                        attributes: ["idCourt"],
+                    },
+                ],
+            },
+        ],
     };
     if (clubsSearch) {
         options.where = {
