@@ -278,6 +278,32 @@ input.foto:hover {
     border-color: #adadad;
 }
 
+/* Courts Table styles */
+table.courts-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+}
+
+table.courts-table th, table.courts-table td {
+    border: 1px solid #ddd;
+    padding: 8px;
+    text-align: left;
+}
+
+table.courts-table th {
+    background-color: #f2f2f2;
+}
+
+/* Reservation button styles */
+td.reservar a {
+    text-decoration: none;
+    padding: 5px 10px;
+    background-color: #ffd900;
+    border-radius: 5px;
+    color: black;
+}
+
 /* Footer */
 footer {
     display: flex;

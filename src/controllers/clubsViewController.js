@@ -19,6 +19,14 @@ const getById = async (req, res) => {
     res.render("clubs/show", { error, club, session: req.session });
 };
 
+// función getAllCourts
+const getAllCourts = async (req, res) => {
+    const idClub = req.params.id;
+    const [error, courts] = await clubsController.getAllCourts(idClub);
+    res.render("clubs/courts", { error, courts, session: req.session });
+};
+
+
 const createForm = async (req, res) => {
     const error = req.query.error;
     if (error) {
@@ -116,6 +124,7 @@ const remove = async (req, res) => {
 export default {
     getAll,
     getById,
+    getAllCourts,
     create,
     createForm,
     update,

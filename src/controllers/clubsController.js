@@ -29,6 +29,19 @@ const getById = async (id) => {
     }
 };
 
+//Funcion getAllCourts
+const getAllCourts = async (idClub) => {
+    const options = {};
+    try {
+        const courts = await courtsModel.findAll({
+            where: { idClub: idClub },
+        });
+        return [null, courts];
+    } catch (e) {
+        return [e.message, null];
+    }
+};
+
 const create = async (clubName, address, comments, photo) => {
     if (clubName === undefined || address === undefined) {
         const error = "Rellene todos los campos obligatorios.";
@@ -92,6 +105,7 @@ const remove = async (idClub) => {
 export default {
     getAll,
     getById,
+    getAllCourts,
     create,
     update,
     remove

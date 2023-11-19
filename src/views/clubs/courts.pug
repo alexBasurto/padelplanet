@@ -1,0 +1,26 @@
+extends ../main
+
+block content
+  h1.title club.clubName
+  if error
+    p(class="error", style="color:red;")= error
+
+  section(class="cards-container")
+    if courts
+    table.courts-table
+        thead
+            tr
+                td Pista
+                td Tipo de pista
+                td Tipo de pared
+                td Tipo de ancho
+                td Acciones
+        tbody
+            each court in courts
+                tr
+                    td= court.courtName
+                    td= court.courtType
+                    td= court.wallType
+                    td= court.widthType
+                    td.reservar
+                        a(href='') RESERVAR

@@ -21,6 +21,14 @@ router.post("/", isAuthenticated, upload.single('photo'), (req, res) => {
     clubsViewController.create(req, res);
 });
 
+// Pistas
+router.get("/:id/pistas", isAuthenticated, (req, res) => {
+    clubsViewController.getAllCourts(req, res);
+});
+
+
+// Editar y borrar
+
 router.get("/:id/edit", isAuthenticated, isAdmin, clubsViewController.updateForm);
 
 router.post("/:id", isAuthenticated, isAdmin, upload.single('photo'), (req, res) => {
