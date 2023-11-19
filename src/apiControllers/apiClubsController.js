@@ -8,24 +8,51 @@ import gamesModel from "../models/gamesModel.js";
 // funciion getAll que devuelve en JSON todos los clubes, desglosados con todas sus pistas (courts)
 const getAll = async (clubsSearch) => {
 // options haciendo include de courtsModel, y desde courtsMOdel haciendo include de gamesModel
-    const options = {
-        include: [
-            {
-                model: courtsModel,
-                include: [
-                    {
-                        model: gamesModel,
-                        //idCourt como campo en común
-                        attributes: ["idCourt"],
-                    },
-                ],
-            },
-        ],
-    };
+// apiClubsController.js
+
+// apiClubsController.js
+
+const options = {
+    include: [
+        {
+            model: courtsModel,
+            attributes: [
+                'idCourt',
+                'courtName',
+                'courtType',
+                'wallType',
+                'widthType',
+                'idClub' // Si quieres incluir el idClub en courtsModel
+            ],
+            include: [
+                {
+                    model: gamesModel,
+                    attributes: [
+                        'idGameDetail',
+                        'idCourt',
+                        'idUser1Team1',
+                        'idUser2Team1',
+                        'idUser1Team2',
+                        'idUser2Team2',
+                        'status',
+                        'booking',
+                        'set1result',
+                        'set2result',
+                        'set3result',
+                        'typeOfGame'
+                    ],
+                }
+            ]
+        }
+    ],
+    order: [["clubName", "ASC"]],
+};
+
+
     if (clubsSearch) {
         options.where = {
             clubName: {
-                [Op.like]: `%${clubsSearch}%`,
+                [Op.iLike]: `%${clubsSearch}%`,
             },
         };
     }

@@ -17,3 +17,7 @@ Requisitos:
     - cargar o descargar archivos (ej. cargar imágenes o descargar los datos conseguidos con el scraper) OK
     - documentación de la API REST con Swagger
     - documentación del código con JSDoc
+
+    NOTAS
+
+    http://172.27.0.3:3000/api/clubs?search=baraka
