@@ -2,7 +2,10 @@ import usersModel from "../models/usersModel.js";
 
 // Middleware de autenticación que verifica si un usuario ha iniciado sesión.
 const isAuthenticated = (req, res, next) => {
+
     if (req.session.user) {
+        //console log de fondo azul mostrando req.session.user
+        console.log("\x1b[44m%s\x1b[0m", "llega aquí ", req.session);
         // Si existe una sesión de usuario, se considera autenticado.
         next(); // Llama a la siguiente función en la cadena de middleware.
     } else {
@@ -15,8 +18,10 @@ const isAdmin = async (req,res,next) =>{
     if(req.session.user ){
         try {
             const user = await usersModel.findByPk(req.session.user);
-
-            if (user && user.rol === 1) {
+            
+            if (user && user.admin === 1) {
+                 //console log de fondo azul mostrando req.session.user
+                console.log("\x1b[44m%s\x1b[0m", "3. IS ADMIN: req.session: ", req.session);
                 // El usuario tiene permisos de administrador, permite el acceso.
                 next();
             } else {

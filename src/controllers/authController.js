@@ -4,6 +4,8 @@ import usersModel from "../models/usersModel.js";
 
 // Controlador para el inicio de sesión.
 const login = async(req,res)=>{
+    //console log en fondo rojo
+    console.log("\x1b[41m%s\x1b[0m","req.body: ",req.body);
     const {email,password} = req.body;
     try{
         const user = await usersModel.findOne({where:{userEmail:email}})
@@ -21,6 +23,8 @@ const login = async(req,res)=>{
     }
     catch(e){
         const errorUri = encodeURIComponent("credenciales incorrectas");
+        //console error con fondo rojo mostrando el texto del error
+        console.log("\x1b[41m%s\x1b[0m","e.message: ",e.message);
         return res.redirect("/login?error="+errorUri);
     }
     
